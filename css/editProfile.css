@@ -1,0 +1,380 @@
+:root {
+    --main-color: #3B5999;
+    --alter-color: #F7F7F5;
+    --alter2-color: #0C1841;
+}
+
+header {
+    display: none
+}
+
+.content .controling {
+    width: 1237px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 1;
+    top: 40px
+}
+
+.content .controling img {
+    cursor: pointer
+}
+
+.content .controling div {
+    width: 259px;
+    height: 117px;
+    padding: 12px;
+    background-color: #FFFFFF;
+    display: none;
+    position: absolute;
+    right: 24px;
+    bottom: -114px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-top-right-radius: 0
+}
+
+.content .controling div span {
+    display: block;
+    width: 235px;
+    height: 46px;
+    padding: 11px;
+    font-size: 20px;
+    line-height: 24px;
+    cursor: pointer;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px
+}
+
+.content .controling div span:hover {
+    background-color: var(--main-color);
+    color: #FFFFFF
+}
+
+.back {
+    width: 100%;
+    height: 348px;
+    margin-bottom: 775px;
+    position: relative;
+    top: -45px
+}
+
+.content2 {
+    width: 1224px;
+    position: absolute;
+    top: 180px;
+    left: 62.188px
+}
+
+.content2 .top {
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content2 .top .left h4,
+.content2 .top .right h4 {
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px
+}
+
+.content2 .top .left .box {
+    width: 264px;
+    padding-top: 41px;
+    padding-bottom: 38px;
+    background-color: #FFFFFF;
+    box-shadow: 2px 7px 27px -4px #0000001A;
+    text-align: center;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px
+}
+
+.content2 .top .left .box label {
+    margin-bottom: 14px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%
+}
+
+.content2 .top .left .box label img:first-of-type {
+    width: 130px;
+    height: 130px
+}
+
+.content2 .top .left .box label .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #0000001A;
+    position: absolute;
+    top: 0
+}
+
+.content2 .top .left .box label img:last-of-type {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%)
+}
+
+.content2 .top .left .box h3 {
+    margin-bottom: 0
+}
+
+.content2 .top .right .box {
+    padding: 46px 74px 32px 74px;
+    background-color: #FFFFFF;
+    box-shadow: 2px 7px 27px -4px #0000001A;
+    display: flex;
+    gap: 105px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+input {
+    width: 343px;
+    height: 50px;
+    margin-bottom: 18px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 22px;
+    display: block;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px
+}
+
+input,
+.content2 .top .right .box .left2 .smoking span,
+.content2 .top .right .box .right2 .status span, 
+.content2 .top .right .box .right2 .blood span {
+    color: var(--main-color);
+    font-size: 18px;
+    line-height: 22px
+}
+
+input::placeholder {
+    color: rgb(209, 199, 199)
+}
+
+.content2 .top .right .box .left2 .calc {
+    width: 343px;
+    height: 50px;
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between
+}
+
+.content2 .top .right .box .left2 .calc input {
+    width: 163px
+}
+
+.content2 .top .right .box .left2 .smoking,
+.content2 .top .right .box .right2 .status,
+.content2 .top .right .box .right2 .blood {
+    margin-bottom: 18px;
+    height: 50px;
+    padding: 14px 12px 18px 22px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px
+}
+
+.content2 .top .right .box .left2 .smoking {
+    margin-bottom: 0
+}
+
+.content2 .top .right .box .left2 .smoking .fa-smoking {
+    font-size: 25px;
+    cursor: default;
+    position: absolute;
+    bottom: 10px;
+    left: -45px
+}
+
+.content2 .top .right .box .drop {
+    width: calc(100% + 2px);
+    padding: 12px;
+    background-color: #FFFFFF;
+    box-shadow: 2px 7px 27px -4px #0000001A;
+    cursor: default;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top: calc(100% + 2px);
+    left: -1px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px
+}
+
+.content2 .top .right .box .drop div {
+    padding: 11px;
+    padding-left: 15px;
+    font-size: 20px;
+    line-height: 24px;
+    cursor: pointer;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px
+}
+
+.content2 .top .right .box .drop div:hover {
+    background-color: var(--main-color);
+    color: #FFFFFF;
+}
+
+.content2 .top .right .box .right2 .status .fa-heart,
+.content2 .top .right .box .right2 .blood .fa-syringe {
+    font-size: 25px;
+    cursor: default;
+    position: absolute;
+    bottom: 8px;
+    left: -37px
+}
+
+.content2 .top .right .box .right2 .blood {
+    margin-bottom: 82px
+}
+
+.content2 .top .right .box .right2 button,
+.content2 .bottom button { 
+    width: 201px; 
+    height: 50px; 
+    background-color: var(--main-color);
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 22px;
+    border: none;
+    border-radius: 10px; 
+    -webkit-border-radius: 10px; 
+    -moz-border-radius: 10px; 
+    -ms-border-radius: 10px; 
+    -o-border-radius: 10px
+}
+
+.content2 .top .right .box .right2 .spinner {
+    top: 353px;
+    right: 156px;
+    display: none
+}
+
+.content2 .bottom {
+    width: 939px;
+    margin-left: auto;
+    padding: 22px 593px 18px 22px;
+    background-color: #FFFFFF;
+    box-shadow: 2px 7px 27px -4px #0000001A;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px
+}
+
+.content2 .bottom h3 {
+    margin-bottom: 20px;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px
+}
+
+.content2 .bottom div {
+    width: 343px;
+    height: 50px;
+    position: relative;
+    margin-bottom: 18px
+}
+
+.content2 .bottom div:last-of-type {
+    margin-bottom: 25px;
+}
+
+.content2 .bottom div input {
+    padding-right: 48.99px
+}
+
+.content2 .bottom div div {
+    width: fit-content;
+    padding-top: 2px;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 18px
+}
+
+.content2 .bottom div div span {
+    color: var(--main-color);
+    font-size: 19px;
+    cursor: pointer;
+    display: flex
+}
+
+.content2 .bottom div div span:last-of-type {
+    font-size: 20px;
+    display: none
+}
+
+.content2 .bottom button { 
+    width: 201px; 
+    height: 50px;
+    background-color: var(--main-color);
+    color: #FFFFFF;
+    font-size: 18px; 
+    line-height: 22px;
+    border: none;
+    border-radius: 10px; 
+    -webkit-border-radius: 10px; 
+    -moz-border-radius: 10px; 
+    -ms-border-radius: 10px; 
+    -o-border-radius: 10px
+}
+
+.content2 .bottom .spinner {
+    bottom: -2px;
+    left: 528px;
+    display: none
+}

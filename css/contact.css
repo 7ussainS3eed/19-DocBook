@@ -1,0 +1,116 @@
+:root {
+    --main-color: #3B5999;
+    --alter-color: #F7F7F5;
+    --alter2-color: #0C1841;
+}
+
+.parent .content {
+    padding: 42px 42px 36px 42px;
+    display: flex;
+    justify-content: space-between
+}
+
+.parent .content .first h3 {
+    color: var(--main-color);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 49px
+}
+
+.parent .content .first p {
+    margin-bottom: 30px;
+    color: var(--alter2-color);
+    font-size: 18px;
+    line-height: 22px
+}
+
+.parent .content .first label {
+    margin-bottom: 12px;
+    color: var(--alter2-color);
+    font-size: 20px;
+    line-height: 24px
+}
+
+.parent .content .first input, 
+.parent .content .first textarea {
+    width: 455px;
+    height: 50px;
+    display: block;
+    margin-bottom: 8px;
+    border: 1px solid #9B9B9B;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px
+}
+
+.parent .content .first textarea {
+    height: 199px !important; 
+    margin-bottom: 18px;
+    resize: none
+}
+
+.parent .content .first input:nth-of-type(3) {
+    height: 60px;
+    margin-bottom: 0;
+    background-color: var(--main-color);
+    color: #FFFFFF;
+    box-shadow: 2px 7px 27px -4px #0000001A;
+    font-size: 20px;
+    font-weight: 700;
+    border: none
+}
+
+.parent .content .first .spinner {
+    top: 690px;
+    left: 579px;
+    display: none
+}
+
+.parent .content .second {
+    height: 454px;
+    margin-top: 60px;
+    padding: 24px 18px 0 24px;
+    background-color: var(--main-color);
+    color: #FFFFFF;
+    box-shadow: 2px 7px 27px -4px #0000001A;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px
+}
+
+.parent .content .second h5 {
+    margin-bottom: 25.8px;
+    font-size: 29px;
+    font-weight: 700
+}
+
+.parent .content .second .line {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center
+}
+
+.parent .content .second .line div {
+    width: 30px;
+    margin-right: 20px;
+    text-align: center
+}
+
+.parent .content .second .line p {
+    margin: 0;
+    font-size: 24px;
+    line-height: 29px
+}
+
+.parent .content .second .images {
+    width: 140px;
+    padding-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Doctor Sign Up | DocBook</title>
+        <link rel="stylesheet" href="css/aid/bootstrap.min.css">
+        <link rel="stylesheet" href="css/aid/all.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/signUpForDoctor.css">
+    </head>
+    <body>
+        <div class="are2"></div>
+        <div class="over"></div>
+        <div class="sign-in"></div>
+        <div class="are"></div>
+        <header></header>
+        <div class="parent">  
+            <div class="content">
+                <div class="left">
+                    <a href="index.html">
+                        <h2>DocBook</h2>
+                    </a>
+                    <h3>Join now and be our partner of success!</h3>
+                    <div>
+                        <img src="./images/doctor2.png">
+                    </div>
+                </div>
+                <div class="right">
+                    <h3>Sign up</h3>
+                    <form>
+                        <label for="userName">User Name</label>
+                        <input type="text" id="userName">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email">
+                        <label for="exp">Phone</label>
+                        <input type="text" id="phone">
+                        <label for="exp">Years of Experience</label>
+                        <input type="number" id="exp">
+                        <label for="birthDate">Date of birth</label>
+                        <input type="text" id="birthDate">
+                        <label for="password">Create password</label>
+                        <div class="same">
+                            <input type="password" id="password">
+                        </div>
+                        <label for="confirmPassword">Confirm password</label>
+                        <div class="same">
+                            <input type="password" id="confirmPassword">
+                        </div>
+                        <div class="spec_sess">
+                            <div class="spec">
+                                <label>Specialization</label>
+                                <div class="to-handel">
+                                    <div class="to-handel"></div>
+                                    <img src="./images/down.png" class="to-handel">
+                                    <div class="choose-menu">
+                                        <span class="choose-li">Cardiology (Heart)</span>
+                                        <span class="choose-li">Neurology (Brain & Nerves)</span>
+                                        <span class="choose-li">Pediatrics and New born</span>
+                                        <span class="choose-li">Orthopedics (Bones)</span>
+                                        <span class="choose-li">Chest and Respiratory</span>
+                                        <span class="choose-li">Scan centers</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="price">Session price</label>
+                                <input type="number" placeholder="$$" id="price">
+                            </div>
+                        </div>
+                        <div class="nation_carner">
+                            <div>
+                                <label>Profile Photo</label>
+                                <label for="photo">Upload photo +</label>
+                                <input type="file" id="photo" hidden>
+                                <div>
+                                    <span></span>
+                                    <p>has been uploaded successfully.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <label>License</label>
+                                <label for="license">Upload photo +</label>
+                                <input type="file" id="license" hidden>
+                                <div>
+                                    <span></span>
+                                    <p>has been uploaded successfully.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <label for="about">About You</label>
+                        <textarea id="about"></textarea>
+                        <button class="submit">Join now</button>
+                        <div class="spinner"></div>
+                    </form>
+                    <p>Already have an account?<span>sign in</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="contact"></div>
+        <script src="js/assests/domain.js"></script>
+        <script src="js/aid/bootstrap.bundle.min.js"></script>
+        <script src="js/aid/all.min.js"></script>
+        <script src="js/aid/jquery-3.6.1.min.js"></script>
+        <script src="js/aid/axios.min.js"></script>
+        <script src="js/components/headerAndFooter.js"></script>
+        <script src="js/components/signInAndAre.js"></script>
+        <script src="js/signUpForDoctor.js"></script>
+    </body>
+</html>

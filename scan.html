@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Scan MRI | DocBook</title>
+        <link rel="stylesheet" href="css/aid/bootstrap.min.css">
+        <link rel="stylesheet" href="css/aid/all.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/scan.css">
+    </head>
+    <body>
+        <div class="result">
+            <img src="images/good.png">
+            <span>Good News</span>
+            <p>You don’t have this disease!</p>
+            <button>Done</button>
+        </div>
+        <div class="result">
+            <img src="images/bad.png">
+            <span>Bad News</span>
+            <p>You have this disease!</p>
+            <button>Done</button>
+        </div>
+        <div class="over"></div>
+        <header></header>
+        <div class="parent">
+            <div class="content">
+                <div class="back">
+                    <img src="./images/back.png">Back
+                </div>
+                <div class="content2">
+                    <h2>Scan MRI</h2>
+                    <p>Scan your MRI and get the result immediately!</p>
+                    <label for="upload">Upload Image
+                        <img src="./images/upload.png">
+                    </label>
+                    <input type="file" id="upload" hidden/>
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+        <div class="contact"></div>
+        <script src="js/assests/domain.js"></script>
+        <script src="js/aid/bootstrap.bundle.min.js"></script>
+        <script src="js/aid/all.min.js"></script>
+        <script src="js/aid/jquery-3.6.1.min.js"></script>
+        <script src="js/aid/axios.min.js"></script>
+        <script src="js/components/headerAndFooter.js"></script>
+        <script src="js/scan.js"></script>
+    </body>
+</html>

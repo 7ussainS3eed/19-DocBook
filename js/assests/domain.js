@@ -1,0 +1,1 @@
+let domain = "https://hospital-ydoz.onrender.com";

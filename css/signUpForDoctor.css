@@ -1,0 +1,395 @@
+:root {
+    --main-color: #3B5999;
+    --alter-color: #F7F7F5;
+    --alter2-color: #0C1841;
+}
+
+.sign-in form {
+    margin-bottom: 0;
+    border: none
+}
+
+.sign-in form input:last-of-type {
+    margin-bottom: 0
+}
+
+.sign-in p:last-of-type {
+    display: none
+}
+
+header {
+    display: none
+}
+
+.parent {
+    position: relative
+}
+
+.parent::before, 
+.parent::after {
+    content: "";
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(169.61deg, rgba(59, 89, 153, 0) 0.06%, #3B5999 92.25%);
+    position: absolute;
+    z-index: -1
+}
+
+.parent::after {
+    background: #F7F7F5;
+    position: absolute;
+    top: 0;
+    right: 0
+}
+
+.parent .content {
+    display: flex
+}
+
+.parent .content .left {
+    width: 50%;
+    position: relative
+}
+
+.parent .content .left a {
+    text-decoration: none
+}
+
+.parent .content .left a h2 {
+    margin-top: 31px;
+    margin-bottom: 65px;
+    color: var(--main-color);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 37px
+}
+
+.parent .content .left h3 {
+    width: 280px;
+    margin-left: 36px;
+    color: var(--main-color);
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 55px
+}
+
+.parent .content .left div {
+    position: absolute;
+    top: 175px;
+    left: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%
+}
+
+.parent .content .right h3 {
+    margin-top: 86px;
+    margin-bottom: 40px;
+    margin-left: 80px;
+    color: var(--main-color);
+    font-size: 40px;
+    line-height: 48px
+}
+
+.parent .content .right form {
+    width: 455px;
+    margin-bottom: 24px;
+    margin-left: 92px;
+    border-bottom: 1px solid #B2B2B1
+}
+
+.parent .content .right form label {
+    margin-bottom: 12px;
+    font-size: 20px;
+    line-height: 24px;  
+    display: block
+}
+
+.parent .content .right form input {
+    width: 455px;
+    height: 50px;
+    margin-bottom: 18px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 12px;
+    border: 1px solid #3B599940;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px
+}
+
+.parent .content .right form .gender_ex div:last-of-type input::-webkit-outer-spin-button,
+.parent .content .right form .gender_ex div:last-of-type input::-webkit-inner-spin-button,
+.parent .content .right form .spec_sess div:last-of-type input::-webkit-outer-spin-button, 
+.parent .content .right form .spec_sess div:last-of-type input::-webkit-inner-spin-button{
+    -webkit-appearance: none
+}
+
+.parent .content .right form input::placeholder {
+    color: #9B9B9B;
+    font-size: 18px;
+    line-height: 22px
+}
+
+.parent .content .right form .gender_ex {
+    display: flex;
+    gap: 67px
+}
+
+.parent .content .right form .gender_ex div span {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 20px;
+    line-height: 24px
+}
+
+.parent .content .right form .gender_ex div:first-of-type label {
+    margin-right: 10px;
+    font-size: 18px;
+    line-height: 22px;
+    display: inline
+}
+
+.parent .content .right form .gender_ex div:first-of-type label:last-of-type {
+    margin-left: 26px
+}
+
+.parent .content .right form .gender_ex div input {
+    width: fit-content;
+    height: unset
+}
+
+.parent .content .right form .gender_ex div:last-of-type input {
+    width: 218px;
+    height: 50px;
+    margin-bottom: 0
+}
+
+.parent .content .right form .same {
+    width: fit-content;
+    margin-bottom: 18px;
+    position: relative
+}
+
+.parent .content .right form .same input {
+    margin-bottom: 0;
+    padding-right: 48.99px
+}
+
+.parent .content .right form .spec_sess .spec div img,
+.parent .content .right form .location img {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 14.08px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%)
+}
+
+.parent .content .right form .spec_sess {
+    margin-bottom: 18px;
+    display: flex;
+    gap: 19px
+}
+
+.parent .content .right form .spec_sess .spec > div {
+    width: 218px;
+    height: 50px;
+    padding-left: 13px;
+    padding-right: 40px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    border: 1px solid #3B599940;
+    position: relative;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px
+}
+
+.parent .content .right form .spec_sess .spec div div:first-of-type {
+    height: 100%;
+    padding-top: 10px;
+    font-size: 19px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.choose-menu {
+    width: 218px;
+    padding: 9px;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: default;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top: calc(100% + 2px);
+    right: 0;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px
+}
+
+.choose-menu .choose-li {
+    width: 100%;
+    height: 38px;
+    padding: 11px;    
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px
+}
+
+.choose-menu .choose-li:hover {
+    background-color: var(--main-color);
+    color: #FFFFFF
+}
+
+.parent .content .right form .spec_sess div input {
+    width: 218px;
+    margin-bottom: 0
+}
+
+.parent .content .right form .location {
+    width: fit-content;
+    margin-bottom: 18px;
+    position: relative
+}
+
+.parent .content .right form .location input {
+    margin-bottom: 0
+}
+
+.parent .content .right form .nation_carner {
+    display: flex;
+    gap: 19px
+}
+
+.parent .content .right form .nation_carner div label:last-of-type {
+    width: 218px;
+    height: 50px;
+    margin-bottom: 8px;
+    padding-top: 11px;
+    padding-left: 21px;
+    background-color: #3B599940;
+    color: #9B9B9B;
+    box-shadow: 2px 7px 27px -4px #0000001A;
+    cursor: pointer;
+    font-family: Calibri;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    border: 1px solid #3B599940;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px
+}
+
+.parent .content .right form .nation_carner div div {
+    display: none;
+    gap: 3px
+}
+
+.parent .content .right form .nation_carner div div span,
+.parent .content .right form .nation_carner div div p {
+    margin-bottom: 0;
+    color: #4CBB17;
+    font-size: 12.5px;
+    line-height: 16px
+}
+
+.parent .content .right form .nation_carner div span {
+    max-width: 48.5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.parent .content .right form .nation_carner ~ label {
+    margin-top: 18px
+}
+
+.parent .content .right form textarea {
+    width: 455px;
+    height: 150px;
+    margin-bottom: 18px;
+    resize: none;
+    border: 1px solid #3B599940;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px
+}
+
+.parent .content .right form button {
+    width: 185px;
+    height: 50px;
+    margin-bottom: 22px;
+    background-color: var(--main-color);
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    border: none;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px
+}
+
+.parent .content .right form .spinner {
+    top: 1334px;
+    right: 338px;
+    display: none
+}
+
+.parent .content .right h2 {
+    width: 550px;
+    margin-top: 282px;
+    margin-left: 45px;
+    color: var(--main-color);
+    font-size: 46px;
+    line-height: 48px;
+    letter-spacing: 0em
+}
+
+.parent .content .right form + p {
+    margin-bottom: 86px;
+    margin-left: 180px;
+    font-family: Calibri;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px
+}
+
+.parent .content .right form + p span {
+    margin-left: 4px;
+    color: var(--main-color);
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--main-color)
+}

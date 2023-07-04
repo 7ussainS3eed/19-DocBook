@@ -1,0 +1,544 @@
+:root {
+    --main-color: #3B5999;
+    --alter-color: #F7F7F5;
+    --alter2-color: #0C1841;
+}
+
+.parent .content {
+    display: flex;
+    justify-content: space-between
+}
+
+.parent .content nav {
+    width: 229px;
+    height: 100vh;
+    background-color: var(--main-color);
+    position: sticky;
+    top: 0
+}
+
+.parent .content nav ul {
+    list-style: none;
+    margin-top: 59px;
+    padding: 0
+}
+
+.parent .content nav ul li {
+    padding: 11px 16px;
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 27px;
+    cursor: pointer
+}
+
+.parent .content nav ul .active, 
+.parent .content nav ul li:hover {
+    background-color: #FFFFFF;
+    color: var(--main-color)
+}
+
+.parent .content .dash,
+.parent .content .our-doctors,
+.parent .content .comp {
+    width: 80%;
+    padding-top: 20px
+}
+
+.parent .content .dash h2,
+.parent .content .our-doctors h2 {
+    margin-bottom: 36px;
+    color: var(--main-color);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 0em
+}
+
+.parent .content .dash h4 {
+    margin-bottom: 34px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em
+}
+
+.parent .content .dash .reports {
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: space-between
+}
+
+.parent .content .dash .reports .report {
+    width: 23%;
+    padding: 40px 20px 40px 13px;
+    background: linear-gradient(180deg, rgba(59, 89, 153, 0) 0%, rgba(59, 89, 153, 0.25) 100%);
+    box-shadow: 2px 7px 27px -4px #0000001A;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px
+}
+
+.parent .content .dash .reports .report div:first-of-type {
+    width: 50px;
+    height: 50px;
+    background-color: #3b599942;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%
+}
+
+.parent .content .dash .reports .report div span:first-of-type {
+    margin-bottom: 5px;
+    color: var(--main-color);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: block
+}
+
+.parent .content .dash .reports .report div span:last-of-type {
+    color: #646262;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0em
+}
+
+.parent .content .dash h2:last-of-type,
+.parent .content .our-doctors h2 {
+    margin-bottom: 34px;
+    font-size: 22px
+}
+
+.parent .content .dash h2 span,
+.parent .content .our-doctors h2 span {
+    margin-left: 17px;
+    color: #646262;
+    font-size: 14px
+}
+
+.parent .content .dash .attrs,
+.parent .content .our-doctors .attrs {
+    padding: 23px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 6px 12px -9px #3B599980
+}
+
+.parent .content .dash .attrs span,
+.parent .content .dash .requests .request div, 
+.parent .content .our-doctors .attrs span, 
+.parent .content .our-doctors .doctors .doctor div {
+    width: 18%
+}
+
+.parent .content .dash .requests .request div img,
+.parent .content .our-doctors .doctors .doctor div img {
+    width: 30px;
+    margin-right: 8px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%
+}
+
+.parent .content .dash .attrs span:nth-child(2),
+.parent .content .dash .requests .request span,
+.parent .content .our-doctors .attrs span:nth-child(2),
+.parent .content .our-doctors .doctors .doctor span {
+    width: 25%
+}
+
+.parent .content .dash .attrs span:nth-child(3),
+.parent .content .dash .requests .request span:nth-of-type(2) {
+    width: 2.8%
+}
+
+.parent .content .dash .attrs span:nth-child(4),
+.parent .content .dash .requests .request span:nth-of-type(3) {
+    width: 7.9%
+}
+
+.parent .content .dash .attrs span:nth-child(5),
+.parent .content .dash .requests .request span:nth-of-type(4) {
+    width: 10.2%
+}
+
+.parent .content .dash .attrs span:nth-child(6),
+.parent .content .dash .requests .request div:last-of-type {
+    width: 8%
+}
+
+.parent .content .dash .requests,
+.parent .content .our-doctors .doctors {
+    margin-bottom: 110px;
+    font-size: 14px
+}
+
+.parent .content .dash .requests .request,
+.parent .content .our-doctors .doctors .doctor {
+    padding: 23px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #3b599942
+}
+
+.parent .content .dash .requests .request div,
+.parent .content .dash .requests .request span,
+.parent .content .our-doctors .doctors .doctor div,
+.parent .content .our-doctors .doctors .doctor span {
+    display: flex;
+    align-items: center
+}
+
+.parent .content .dash .requests .request span button { 
+    width: 69px; 
+    height: 27px;
+    background-color: var(--main-color);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px; 
+    -webkit-border-radius: 10px; 
+    -moz-border-radius: 10px; 
+    -ms-border-radius: 10px; 
+    -o-border-radius: 10px
+}
+
+.parent .content .dash .requests .request div:last-of-type img {
+    cursor: pointer
+}
+
+.parent .content .dash .requests .request div:last-of-type img:first-of-type {
+    margin-right: 12px
+}
+
+.parent .content .dash .requests .request div:last-of-type .spinner {
+    right: 31px;
+    display: none
+}
+
+.parent .content .our-doctors {
+    display: none
+}
+
+.parent .content .our-doctors .doctors .doctor {
+    position: relative
+}
+
+.parent .content .our-doctors .attrs span:nth-child(3),
+.parent .content .our-doctors .doctors .doctor span:nth-of-type(2) {
+    width: 18%
+}
+
+.parent .content .our-doctors .attrs span:nth-child(4), 
+.parent .content .our-doctors .doctors .doctor span:nth-of-type(3) {
+    width: 2.8%
+}
+
+.parent .content .our-doctors .attrs span:nth-child(5),
+.parent .content .our-doctors .doctors .doctor div:nth-of-type(2) {
+    width: 7%
+}
+
+.parent .content .our-doctors .doctors .doctor div:nth-of-type(2) img {
+    width: 20px
+}
+
+.parent .content .our-doctors .doctors .doctor .spinner {
+    top: 18px;
+    right: -50px;
+    display: none
+}
+
+.parent .content .our-doctors .doctors .doctor:hover {
+    background: #3B599933;
+    cursor: pointer
+}
+
+.parent .content .our-doctors .alter {
+    display: none
+}
+
+.parent .content .our-doctors .alter .back {
+    margin-bottom: 18px;
+    cursor: pointer
+}
+
+.parent .content .our-doctors .alter .doc-card {
+    margin-bottom: 40px;
+    padding: 18px;
+    padding-bottom: 32px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px
+}
+
+.parent .content .our-doctors .alter .doc-card .left .head {
+    width: fit-content;
+    margin-bottom: 69px;
+    display: flex;
+    gap: 22px
+}
+
+.parent .content .our-doctors .alter .doc-card .left .head img {
+    width: 120px;
+    border: 2px solid #0C1841;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%
+}
+
+.parent .content .our-doctors .alter .doc-card .left .head div h3 {
+    margin-bottom: 12px;
+    color: var(--main-color);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 0em
+}
+
+.parent .content .our-doctors .alter .doc-card .left .head div span {
+    display: block;
+    width: 205px;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0em
+}
+
+.parent .content .our-doctors .alter .doc-card .left .body {
+    display: flex;
+    gap: 18px
+}
+
+.parent .content .our-doctors .alter .doc-card .left .body div:first-of-type span {
+    display: block;
+    color: var(--main-color);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0em
+}
+
+.parent .content .our-doctors .alter .doc-card .left .body div:first-of-type span:first-of-type {
+    margin-bottom: 121px;
+}
+
+.parent .content .our-doctors .alter .doc-card .left .body div:first-of-type span:nth-of-type(2) {
+    margin-bottom: 22px
+}
+
+.parent .content .our-doctors .alter .doc-card .left .body div:last-of-type p {
+    width: 290px;
+    height: 120px;
+    margin-top: 7px;
+    margin-bottom: 32px;
+    color:#646262;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0em
+}
+
+.parent .content .our-doctors .alter .doc-card .left .body div:last-of-type span {
+    display: block;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0em
+}
+
+.parent .content .our-doctors .alter .doc-card .left .body div:last-of-type span:first-of-type {
+    margin-bottom: 30px
+}
+
+.parent .content .our-doctors .alter .doc-card button {
+    width: 208px;
+    height: 60px;
+    background: #D90000;
+    color: #FFFFFF;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0em;
+    border: none;
+    border-radius: 20px; 
+    -webkit-border-radius: 20px; 
+    -moz-border-radius: 20px; 
+    -ms-border-radius: 20px; 
+    -o-border-radius: 20px
+}
+
+.parent .content .our-doctors .alter .doc-card .spinner {
+    top: 98px;
+    right: 20px;
+    display: none
+}
+
+.parent .content .our-doctors .alter h5 {
+    margin-bottom: 5px;
+    color: var(--main-color);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 0em
+}
+
+.parent .content .our-doctors .alter .complaints {
+    margin-bottom: 60px
+}
+
+.parent .content .our-doctors .alter .complaints .complaint {
+    padding-top: 15px;
+    padding-left: 20px
+}
+
+.parent .content .our-doctors .alter .complaints .complaint div:first-of-type {
+    margin-bottom: 8px
+}
+
+.parent .content .our-doctors .alter .complaints .complaint div span {
+    margin-left: 3px;
+    color: var(--main-color);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em
+}
+
+.parent .content .our-doctors .alter .complaints .complaint div:last-of-type {
+    width: 80%;
+    height: 189px;
+    padding: 18px;
+    color: #646262;
+    font-size: 20px;
+    letter-spacing: 0em;
+    border: 1px solid #3B59994D;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px
+}
+
+.parent .content .comp {
+    display: none
+}
+
+.parent .content .comp h2 {
+    margin-bottom: 20px;
+    color: var(--main-color);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 0em
+}
+
+.parent .content .comp .head {
+    width: 1010px;
+    height: 102px;
+    margin-bottom: 20px;
+    color: var(--main-color); 
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em;
+    box-shadow: 2px 7px 27px -4px #0000001A;
+    display: flex;
+    justify-content: center;
+    gap: 160px
+}
+
+.parent .content .comp .head div {
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center
+}
+
+.parent .content .comp .head .active,
+.parent .content .comp .head div:hover {
+    border-bottom: 1px solid #3B5999
+}
+
+.parent .content .comp .doctor-comps .doctor-comp,
+.parent .content .comp .site-comps .site-comp {
+    margin-bottom: 15px;
+    padding-left: 20px
+}
+
+.parent .content .comp .doctor-comps .doctor-comp:last-of-type, 
+.parent .content .comp .site-comps .site-comp:last-of-type {
+    margin-bottom: 60px
+}
+
+.parent .content .comp .doctor-comps .doctor-comp div:first-of-type,
+.parent .content .comp .site-comps .site-comp .top {
+    margin-bottom: 8px
+}
+
+.parent .content .comp .doctor-comps .doctor-comp div span,
+.parent .content .comp .site-comps .site-comp div span {
+    margin-left: 3px;
+    color: var(--main-color);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em
+}
+
+.parent .content .comp .doctor-comps .doctor-comp div:last-of-type,
+.parent .content .comp .site-comps .site-comp .details {
+    width: 80%;
+    height: 189px;
+    padding: 18px;
+    color: #646262;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0em;
+    border: 1px solid #3B59994D;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px
+}
+
+.parent .content .comp .site-comps {
+    display: none
+}
+
+.parent .content .comp .site-comps .site-comp .top {
+    display: flex;
+    align-items: center
+}
+
+.parent .content .comp .site-comps .site-comp div span {
+    margin-left: 5px
+}
+
+.parent .content .comp .site-comps .site-comp div span:last-of-type {
+    display: block;
+    color: #646262;
+    font-size: 14px;
+    line-height: 17px
+}

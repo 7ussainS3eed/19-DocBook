@@ -1,0 +1,151 @@
+:root {
+    --main-color: #3B5999;
+    --alter-color: #F7F7F5;
+    --alter2-color: #0C1841;
+}
+
+.sign-in form {
+    margin-bottom: 0;
+    border: none
+}
+
+.sign-in form input:last-of-type {
+    margin-bottom: 0
+}
+
+.sign-in p:last-of-type {
+    display: none
+}
+
+header {
+    display: none
+}
+
+.parent .content {
+    padding: 72px 62px 73px 7px;
+}
+
+.parent .content .back {
+    width: fit-content;
+    margin-bottom: 22px;
+    color: var(--main-color);
+    font-size: 25px;
+    line-height: 31px;
+    cursor: pointer;
+    display: flex;
+    gap: 22px
+}
+
+.parent .content .content2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.parent .content .content3 h3 {
+    margin-bottom: 60px;
+    color: var(--main-color);
+    font-size: 40px;
+}
+
+.parent .content .content3 form {
+    margin-bottom: 24px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #B2B2B1
+}
+
+.parent .content .content3 form .name label, 
+.parent .content .content3 form .mail label,
+.parent .content .content3 form .gender label,
+.parent .content .content3 form .birth label,
+.parent .content .content3 form .creat label,
+.parent .content .content3 form .confirm label {
+    margin-bottom: 12px;
+    font-size: 20px;
+    line-height: 24px;
+    display: block
+}
+
+.parent .content .content3 form .name input, 
+.parent .content .content3 form .mail input,
+.parent .content .content3 form .birth input,
+.parent .content .content3 form .creat input,
+.parent .content .content3 form .confirm input {
+    width: 455px;
+    height: 50px;
+    margin-bottom: 18px;
+    padding-left: 12px;
+    border: 1px solid #3B599980;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px
+}
+
+.parent .content .content3 form .gender .parent {
+    display: flex;
+    gap: 26px
+}
+
+.parent .content .content3 form .gender .parent div {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px
+}
+
+.parent .content .content3 form .gender .parent div label {
+    margin-bottom: 0;
+    font-size: 18px
+}
+
+.parent .content .content3 form .gender .parent div input {
+    margin-top: 3px
+}
+
+.parent .content .content3 form input[type="submit"] {
+    width: 185px;
+    height: 50px;
+    background-color: var(--main-color);
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    border: none;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px
+}
+
+.spinner {
+    top: 759px;
+    right: 334px;
+    display: none
+}
+
+.parent .content .content3 .already {
+    display: flex;
+    justify-content: center;
+    gap: 4px
+}
+
+.parent .content .content3 .already p {
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 24px
+}
+
+.parent .content .content3 .already a {
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--main-color)
+}
+
+.contact {
+    display: none
+}
