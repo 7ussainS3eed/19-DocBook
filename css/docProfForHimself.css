@@ -5,7 +5,8 @@
 }
 
 html {
-    overflow: hidden
+    overflow: hidden;
+    overflow-x: hidden !important;
 }
 
 .note {
@@ -279,9 +280,58 @@ header {
     margin-left: 47px
 }
 
+.exit {
+    font-size: 40px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    right: 115px
+}
+
 .animate {
     width: 500px;
-    height: 500px;
+    height: 500px
+}
+
+.progress-bar {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    background-color: var(--main-color);
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px
+}
+
+.progress {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: var(--main-color);
+    animation: progressAnimation 8s linear infinite;
+    -webkit-animation: progressAnimation 8s linear infinite;
+}
+
+@keyframes progressAnimation {
+    0% { transform: translateX(100%);}
+    100% { transform: translateX(-100%);}
+}
+
+.text {
+    color: #fff;
+    font-size: 33px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%)
 }
 
 .parent .content .profile .content3 {
@@ -494,6 +544,10 @@ header {
     margin-bottom: 0
 }
 
+.comments {
+    height: 336px;
+}
+
 .parent .content .dash {
     width: 995.61px;
     padding: 20px 18px 32px 16px;
@@ -550,7 +604,8 @@ header {
     line-height: 20px
 }
 
-.parent .content .dash .left .outer {
+.parent .content .dash .left .outer,
+.parent .content .dash .left .outer2 {
     width: 390px;
     margin-bottom: 23px;
     padding: 12px 7px 12px 10px;
@@ -563,7 +618,8 @@ header {
     -o-border-radius: 10px
 }
 
-.parent .content .dash .left .outer .box {
+.parent .content .dash .left .outer .box,
+.parent .content .dash .left .outer2 .box2 {
     height: 341px;
     background-color: #FFFFFF;
     overflow: auto;
@@ -574,11 +630,13 @@ header {
     -o-border-radius: 10px
 }
 
-.parent .content .dash .left .outer .box::-webkit-scrollbar {
+.parent .content .dash .left .outer .box::-webkit-scrollbar,
+.parent .content .dash .left .outer2 .box2::-webkit-scrollbar {
     width: 4px
 }
 
-.parent .content .dash .left .outer .box::-webkit-scrollbar-thumb {
+.parent .content .dash .left .outer .box::-webkit-scrollbar-thumb,
+.parent .content .dash .left .outer2 .box2::-webkit-scrollbar-thumb {
     background-color: var(--main-color);
     border-radius: 50px;
     -webkit-border-radius: 50px;
@@ -587,7 +645,8 @@ header {
     -o-border-radius: 50px
 }
 
-.parent .content .dash .left .outer .box .appoint {
+.parent .content .dash .left .outer .box .appoint,
+.parent .content .dash .left .outer2 .box2 .appoint2 {
     width: 98%;
     margin-bottom: 6.2px;
     padding: 10px;
@@ -606,7 +665,8 @@ header {
     background-color: #3B599940
 }
 
-.parent .content .dash .left .outer .box .appoint:last-of-type {
+.parent .content .dash .left .outer .box .appoint:last-of-type,
+.parent .content .dash .left .outer2 .box2 .appoint2:last-of-type {
     padding-bottom: 0;
     margin-bottom: 0
 }
@@ -629,6 +689,50 @@ header {
     line-height: 24px
 }
 
+.parent .content .dash .left .outer2 .box2 .appoint2 {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 9px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gainsboro;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+.parent .content .dash .left .outer2 .box2 .appoint2:last-of-type {
+    border-bottom: 0;
+}
+
+.parent .content .dash .left .outer2 .box2 .appoint2 div:first-of-type {
+    display: flex;
+    align-items: center;
+}
+
+.parent .content .dash .left .outer2 .box2 .appoint2 div:first-of-type span {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+.parent .content .dash .left .outer2 .box2 .appoint2 div:last-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.parent .content .dash .left .outer2 .box2 .appoint2 div:last-of-type span {
+    font-size: 19px;
+}
+
+.parent .content .dash .left .outer2 .box2 .appoint2 div:last-of-type span:last-of-type {
+    font-size: 16px;
+}
+
 .parent .content .dash .right {
     width: 60%;
     padding-top: 40px;
@@ -644,7 +748,7 @@ header {
 .parent .content .dash .right .status {
     margin-bottom: 23px;
     display: flex;
-    justify-content: space-between
+    gap: 20px
 }
 
 .parent .content .dash .right .status > div {
@@ -714,6 +818,7 @@ header {
 
 .parent .content .dash .right .father .child .left2 img {
     width: 100px;
+    height: 100px;
     margin-bottom: 12px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -970,8 +1075,13 @@ header {
 
 .parent .content .setting .space .content2 .forms .left select {
     padding: 0;
-    padding-left: 0;
-    cursor: pointer
+    padding-left: 16px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('../images/down.png') no-repeat right center;
+    background-position: 306px center
 }
 
 .parent .content .setting .space .content2 .forms .left textarea {

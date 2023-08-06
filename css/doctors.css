@@ -293,7 +293,7 @@ aside:hover {
 }
 
 .parent .content .boxes .box .first .information {
-    margin-bottom: 18px;
+    margin-bottom: 80px;
     display: flex;
     gap: 18.55px
 }
@@ -315,6 +315,17 @@ aside:hover {
     -o-border-radius: 10px
 }
 
+.fa-star {
+    font-size: 22px;
+    color: #FFD233;
+}
+
+.information div .fa-money-check-dollar {
+    font-size: 23px;
+    color: var(--main-color);
+}
+
+
 .parent .content .boxes .box .first .information div span {
     font-size: 18px
 }
@@ -333,6 +344,8 @@ aside:hover {
     font-size: 18px;
     font-weight: 700;
     display: none;
+    position: absolute;
+    bottom: -8px;
     border: none;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -355,7 +368,7 @@ aside:hover {
 }
 
 .parent .content .boxes .box .first .spinner {    
-    bottom: 27px;
+    bottom: 18px;
     left: 299px;
     display: none
 }
@@ -364,4 +377,11 @@ aside:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-end
+}
+
+.parent .content .boxes .box .second .spinner {
+    margin-bottom: 8px;
+    position: relative;
+    left: 658px;
+    display: none
 }

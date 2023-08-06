@@ -73,6 +73,12 @@ html {
     color: var(--main-color)
 }
 
+.adding .spinner {
+    right: 8px;
+    bottom: 8px;
+    display: none
+}
+
 .back {
     width: 100%;
     height: 426px;
@@ -158,6 +164,7 @@ header .content .control .buttons .drop span:last-of-type {
 
 .parent .content .left div img {
     width: 95px;
+    height: 95px;
     margin-bottom: 12px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -280,6 +287,10 @@ header .content .control .buttons .drop span:last-of-type {
     gap: 12px
 }
 
+.parent .content .right .left2 .appons_notes .outer {
+    position: relative;
+}
+
 .parent .content .right .left2 .appons_notes .outer,
 .parent .content .right .left2 .appons_notes .outer2,
 .parent .content .right .right2 .outer3 {
@@ -331,6 +342,12 @@ header .content .control .buttons .drop span:last-of-type {
     font-size: 22px;
     font-weight: 700;
     line-height: 27px
+}
+
+.parent .content .right .left2 .appons_notes .outer .spinner {
+    top: 8px;
+    right: 28px;
+    display: none
 }
 
 .parent .content .right .left2 .appons_notes .outer .appons .appon {
@@ -403,6 +420,22 @@ header .content .control .buttons .drop span:last-of-type {
     -o-transform: translateY(-2px)
 }
 
+.parent .content .right .left2 .appons_notes .outer .appons .appon div:first-of-type span {
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 11px
+}
+
+.parent .content .right .left2 .appons_notes .outer .appons .appon:first-of-type div:first-of-type span {
+    right: 60px
+}
+
+.parent .content .right .left2 .appons_notes .outer .appons .appon div:first-of-type span .fa-calendar-xmark {
+    color: red;
+    font-size: 24px
+}
+
 .parent .content .right .left2 .appons_notes .outer .appons .appon div:last-of-type {
     padding-left: 23px;
     display: flex;
@@ -420,7 +453,7 @@ header .content .control .buttons .drop span:last-of-type {
 }
 
 .parent .content .right .left2 .appons_notes .outer2 {
-    width: 318px
+    width: 318px;
 }
 
 .parent .content .right .left2 .appons_notes .outer2 .notes .note {
@@ -535,8 +568,23 @@ header .content .control .buttons .drop span:last-of-type {
     cursor: pointer
 }
 
+.parent .content .right .right2 .outer3 .spinner {
+    bottom: 340px;
+    right: 20px;
+    display: none
+}
+
 .parent .content .right .right2 .animate {
     width: 270px;
     height: 270px;
     margin-top: 86px;
+}
+
+.fa-circle-xmark {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    bottom: 260px;
+    right: 40px
 }

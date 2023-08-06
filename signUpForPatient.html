@@ -15,6 +15,9 @@
         <div class="over"></div>
         <div class="sign-in"></div>
         <div class="are"></div>
+        <a href="javascript:void(0);" id="backToTop" class="back-to-top">
+            <i class="arrow"></i><i class="arrow"></i>
+        </a>
         <header></header>
         <div class="parent">
             <div class="content">
@@ -34,22 +37,9 @@
                                 <label>E-mail</label>
                                 <input type="email">
                             </div>
-                            <!--<div class="gender">
-                                <label>Gender</label>
-                                <div class="parent">
-                                    <div>
-                                        <label>male</label>
-                                        <input type="radio" name="gender">
-                                    </div>
-                                    <div>
-                                        <label>female</label>
-                                        <input type="radio" name="gender">
-                                    </div>
-                                </div>
-                            </div>-->
                             <div class="birth">
                                 <label>Date of Birth</label>
-                                <input type="text">
+                                <input type="date" id="birthDate">
                             </div>
                             <div class="creat">
                                 <label>Create Password</label>
@@ -75,8 +65,10 @@
         <script src="js/aid/bootstrap.bundle.min.js"></script>
         <script src="js/aid/all.min.js"></script>
         <script src="js/aid/jquery-3.6.1.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="js/components/headerAndFooter.js"></script>
         <script src="js/components/signInAndAre.js"></script>
+        <script src="js/components/toTop.js"></script>
         <script src="js/signUpForPatient.js"></script>
     </body>
 </html>

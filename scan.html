@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Scan MRI | DocBook</title>
         <link rel="stylesheet" href="css/aid/bootstrap.min.css">
-        <link rel="stylesheet" href="css/aid/all.min.css">
+        <script src="https://kit.fontawesome.com/b0d972bce3.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/scan.css">
     </head>
@@ -24,6 +24,9 @@
             <button>Done</button>
         </div>
         <div class="over"></div>
+        <a href="javascript:void(0);" id="backToTop" class="back-to-top">
+            <i class="arrow"></i><i class="arrow"></i>
+        </a>
         <header></header>
         <div class="parent">
             <div class="content">
@@ -38,6 +41,10 @@
                     </label>
                     <input type="file" id="upload" hidden/>
                     <div class="spinner"></div>
+                    <i class="fa-solid fa-rectangle-ad"></i>
+                    <div class="advertise-box">
+                        <img id="advertise-image" src="" alt="Advertisement">
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,7 +54,9 @@
         <script src="js/aid/all.min.js"></script>
         <script src="js/aid/jquery-3.6.1.min.js"></script>
         <script src="js/aid/axios.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="js/components/headerAndFooter.js"></script>
+        <script src="js/components/toTop.js"></script>
         <script src="js/scan.js"></script>
     </body>
 </html>

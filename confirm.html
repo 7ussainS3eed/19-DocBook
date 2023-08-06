@@ -18,6 +18,9 @@
             <button>Okay</button>
         </div>
         <div class="over"></div>
+        <a href="javascript:void(0);" id="backToTop" class="back-to-top">
+            <i class="arrow"></i><i class="arrow"></i>
+        </a>
         <header></header>
         <div class="parent">
             <div class="content">
@@ -42,7 +45,7 @@
                             </div>
                             <input type="password">
                             <label>Expiration MM/YY</label>
-                            <input type="text" >
+                            <input type="month" name="monthYear" id="monthYearInput">
                             <label>Security Code CVV</label>
                             <input type="password">
                             <input type="submit" value="Book">
@@ -59,7 +62,9 @@
         <script src="js/aid/all.min.js"></script>
         <script src="js/aid/jquery-3.6.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="js/components/headerAndFooter.js"></script>
+        <script src="js/components/toTop.js"></script>
         <script src="js/confirm.js"></script>
     </body>
 </html>

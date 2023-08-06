@@ -11,6 +11,9 @@
     </head>
     <body>
         <div id="overlay"></div>
+        <a href="javascript:void(0);" id="backToTop" class="back-to-top">
+            <i class="arrow"></i><i class="arrow"></i>
+        </a>
         <div id="content">
             <div class="adding">
                 <p>Enter what you want to add ...</p>
@@ -19,6 +22,7 @@
                     <button>Add</button>
                     <button>Cancel</button>
                 </div>
+                <div class="spinner"></div>
             </div>
             <div class="over"></div>
             <img src="./images/edit2.png" class="back">
@@ -34,6 +38,7 @@
                             <div class="main"></div>
                             <div class="appons_notes">
                                 <div class="outer">
+                                    <div class="spinner"></div>
                                     <div class="appons">
                                         <h4>Appointments</h4>
                                     </div>
@@ -56,7 +61,11 @@
                                     </div>
                                     <div class="alls"></div>
                                 </div>
+                                <div class="spinner"></div>
                             </div>
+                            <span class="exit">
+                                <i class="fa-regular fa-circle-xmark"></i>
+                            </span>
                             <img class="animate">
                         </div>
                     </div>
@@ -68,9 +77,11 @@
         <script src="js/aid/bootstrap.bundle.min.js"></script>
         <script src="js/aid/all.min.js"></script>
         <script src="js/aid/jquery-3.6.1.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="js/components/overlayLoading.js"></script>
         <script src="js/components/headerAndFooter.js"></script>
         <script src="js/components/animate.js"></script>
+        <script src="js/components/toTop.js"></script>
         <script src="js/patientProfForHimself.js"></script>
     </body>
 </html>

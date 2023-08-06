@@ -75,14 +75,13 @@ header .content .control {
 
 .parent .content {
     padding-top: 22px;
-    padding-bottom: 300px;
     padding-left: 18.7px;
     background-color: var(--alter-color)
 }
 
 .parent .content .back {
     width: fit-content;
-    margin-bottom: 157.2px;
+    margin-bottom: 40px;
     color: var(--main-color);
     font-size: 25px;
     line-height: 31px;
@@ -111,6 +110,7 @@ header .content .control {
 }
 
 .parent .content .content2 label {
+    margin-bottom: 485px;
     padding: 13px 43px;
     background-color: var(--main-color);
     color: #FFFFFF;
@@ -131,7 +131,41 @@ header .content .control {
 }
 
 .parent .content .content2 .spinner {
-    top: 466px;
+    top: 350px;
     left: 727px;
     display: none
+}
+
+.fa-rectangle-ad {
+    position: absolute;
+    left: 210px;
+    bottom: 689px;
+    font-size: 40px;
+}
+
+.advertise-box {
+    width: 1000px;
+    height: 350px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 495px;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px
+}
+
+.advertise-box img {
+    width: 100%;
+    height: 100%
 }

@@ -15,3 +15,8 @@ if (imageIndex == 0) {
 } else {
     imageEle.style.transform = "none";
 }
+
+document.querySelector(".exit").onclick = function() {
+    this.style.display = "none";
+    imageEle.style.display = "none";
+}

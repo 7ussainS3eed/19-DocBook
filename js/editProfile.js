@@ -1,3 +1,5 @@
+document.querySelector(".content .controling img:first-of-type").onclick = () => location.href = "patientProfForHimself.html"
+
 document.querySelector(".content .controling .account span:first-of-type").onclick = function() {
     localStorage.clear();
     location.href = "index.html";
@@ -16,7 +18,7 @@ document.querySelector(".sure div button:first-of-type").onclick = function() {
         }
     })
     .then(response => response.json())
-    .then(data => {
+    .then( () => {
         localStorage.clear();
         location.href = "index.html"
     })
@@ -32,12 +34,7 @@ document.querySelector(".content2").innerHTML = (`
             <h4>Edit Profile</h4>
             <div class="box">
                 <form>
-                    <label for="profile">
                     <img src="../images/user.png" class="profImg">
-                    <div class="overlay"></div>
-                    <img src="./images/upload2.png">
-                    </label>
-                    <input type="file" id="profile" hidden>
                 </form>
                 <div class="buttonss">
                     <button>Upload</button>
@@ -132,6 +129,7 @@ document.querySelector(".content2").innerHTML = (`
         </div>
         <button>Save</button>
         <div class="spinner"></div>
+        <img src="../images/password2.png">
     </div>
 `);
 
@@ -193,7 +191,7 @@ document.querySelector(".content2 .top .right .box .right2 button").onclick = fu
         "allergies": document.querySelector(".content2 .top .right .box .right2 input").value, 
         "blood": document.querySelector(".content2 .top .right .box .right2 .blood span").innerHTML,
     }
-    fetch(`${domain}/user/account/profile/${patientMainData.userId}`, {
+    fetch(`${domain}/user/account/profilenew/${patientMainData.userId}`, {
         method: 'PUT',
         headers: {
             'Authorization': `Bearer ${patientMainData.token}`,
@@ -203,12 +201,11 @@ document.querySelector(".content2 .top .right .box .right2 button").onclick = fu
     })
     .then(response => response.json())
     .then(data => {
-        if (data.hasOwnProperty('errors')) {
-            alert(data.errors[0].msg);
+        if (!data.hasOwnProperty('afterUpdated')) {
             updatePatientDataSpinner.style.display = "none";
+            swal(data.message);
         }
         else {
-            alert(data.message);
             fetch(`${domain}/user/account/profile/${patientMainData.userId}`, {
                 headers: {
                     'Authorization': `Bearer ${patientMainData.token}`
@@ -247,8 +244,8 @@ document.querySelector(".content2 .bottom button").onclick = function() {
     })
     .then(response => response.json())
     .then(data => {
-        alert(data.message);    
         changePasswordSpinner.style.display = "none";
+        swal(data.message);    
         if (!data.hasOwnProperty("status")) {
             location.href = "patientProfForHimself.html";
         }

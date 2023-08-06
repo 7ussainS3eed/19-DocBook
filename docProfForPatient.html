@@ -18,6 +18,9 @@
             <div class="sign-in"></div>
             <div class="are"></div>
             <div class="complaint"></div>
+            <a href="javascript:void(0);" id="backToTop" class="back-to-top">
+                <i class="arrow"></i><i class="arrow"></i>
+            </a>
             <header></header>
             <div class="parent">
                 <div class="content">
@@ -27,10 +30,6 @@
                             <div class="box"></div>
                             <div class="box2"></div>
                             <div>
-                                <!--<div class="buttons">
-                                    <button>Chat With Doctor</button>
-                                    <button>Video Call</button>
-                                </div>-->
                                 <form>
                                     <h5>Rate Overall</h5>
                                     <div>
@@ -52,7 +51,6 @@
                                     </div>
                                     <textarea placeholder="Additional comments...."></textarea>
                                     <div>
-                                        <!--<button>Not now</button>-->
                                         <button>Submit</button>
                                         <div class="spinner"></div>
                                     </div>
@@ -70,6 +68,7 @@
                                 <div class="dropMenu"></div>
                             </div>
                             <button class="book"></button>
+                            <div class="spinner custom"></div>
                         </div>
                     </div>
                 </div>
@@ -80,10 +79,12 @@
         <script src="js/aid/bootstrap.bundle.min.js"></script>
         <script src="js/aid/all.min.js"></script>
         <script src="js/aid/jquery-3.6.1.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="js/components/overlayLoading.js"></script>
         <script src="js/components/headerAndFooter.js"></script>
         <script src="js/components/calender.js"></script>
         <script src="js/components/signInAndAre.js"></script>
+        <script src="js/components/toTop.js"></script>
         <script src="js/docProfForPatient.js"></script>
     </body>
 </html>

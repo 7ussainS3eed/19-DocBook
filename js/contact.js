@@ -1,6 +1,7 @@
 let inputs = document.querySelectorAll(".parent .content .first form input");
+let submitSpinner = document.querySelector(".parent .content .first .spinner");
 document.querySelector(".parent .content .first form").addEventListener("submit", function(e) {
-    document.querySelector(".parent .content .first .spinner").style.display = "block";
+    submitSpinner.style.display = "block";
     e.preventDefault();
     fetch(`${domain}/contactus`, {
         method: 'POST',
@@ -15,8 +16,11 @@ document.querySelector(".parent .content .first form").addEventListener("submit"
     })
     .then(response => response.json())
     .then(data => {
-        alert(data.message);
-        location.reload();
+        submitSpinner.style.display = "none";
+        swal(data.message)
+        .then(() => {
+            location.reload();
+        });
     })
     .catch(error => {
         console.error('Error:', error);

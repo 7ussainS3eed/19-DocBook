@@ -66,7 +66,7 @@
 .parent .content .dash .reports {
     margin-bottom: 35px;
     display: flex;
-    justify-content: space-between
+    gap: 25px;
 }
 
 .parent .content .dash .reports .report {
@@ -148,11 +148,21 @@
 .parent .content .our-doctors .doctors .doctor div img {
     width: 30px;
     margin-right: 8px;
+    cursor: pointer;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%
+}
+
+.parent .content .dash .requests .request div:first-of-type img,
+.parent .content .our-doctors .doctors .doctor div:first-of-type img {
+    height: 30px;
+}
+
+.custom-swal img {
+    width: 300px;
 }
 
 .parent .content .dash .attrs span:nth-child(2),
@@ -164,7 +174,7 @@
 
 .parent .content .dash .attrs span:nth-child(3),
 .parent .content .dash .requests .request span:nth-of-type(2) {
-    width: 2.8%
+    width: 5%
 }
 
 .parent .content .dash .attrs span:nth-child(4),
@@ -208,6 +218,7 @@
     width: 69px; 
     height: 27px;
     background-color: var(--main-color);
+    background-color: e;
     color: #FFFFFF;
     border: none;
     border-radius: 10px; 
@@ -245,7 +256,7 @@
 
 .parent .content .our-doctors .attrs span:nth-child(4), 
 .parent .content .our-doctors .doctors .doctor span:nth-of-type(3) {
-    width: 2.8%
+    width: 5%
 }
 
 .parent .content .our-doctors .attrs span:nth-child(5),
@@ -302,6 +313,7 @@
 
 .parent .content .our-doctors .alter .doc-card .left .head img {
     width: 120px;
+    height: 120px;
     border: 2px solid #0C1841;
     border-radius: 50%;
     -webkit-border-radius: 50%;

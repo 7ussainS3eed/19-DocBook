@@ -1,3 +1,6 @@
+var today = new Date().toISOString().split('T')[0];
+document.getElementById("birthDate").setAttribute("max", today);
+
 let chooseMenuOpened = 0
 let chooseMenu = document.querySelector(".choose-menu");
 let handelOpenAndClose = function(toBe) {
@@ -34,12 +37,25 @@ for (i = 0; i < 2; i++) {
 let signUpDoctorSpinner = document.querySelector(".parent .content .right form .spinner");
 document.querySelector(".submit").addEventListener("click", function(e) {
     e.preventDefault();
+    const originalDate = new Date(document.querySelector("input:nth-of-type(4)").value);
+    const year = originalDate.getFullYear();
+    const month = String(originalDate.getMonth() + 1).padStart(2, '0');
+    const day = String(originalDate.getDate()).padStart(2, '0');
+    const formattedDate = `${day}-${month}-${year}`;
+    if (specializationDiv.textContent == "") {
+        swal("Specialization can not be blank!");
+        return;
+    }
+    const inputs = document.querySelectorAll('input');
+    if (inputs[9].value == "") {
+        swal("Session Price can not be blank!")
+        return
+    }
     if (window.getComputedStyle(toBeFilled[0]).getPropertyValue('display') == "block" || window.getComputedStyle(toBeFilled[1]).getPropertyValue('display') == "block") {
-        signUpDoctorSpinner.style.top = "1350px"
+        signUpDoctorSpinner.style.top = "1037px"
     }
     signUpDoctorSpinner.style.display = "block";
     const formData = new FormData();
-    const inputs = document.querySelectorAll('input, textarea');
     inputs.forEach(input => {
         const name = input.id;
         const value = input.value;
@@ -49,7 +65,11 @@ document.querySelector(".submit").addEventListener("click", function(e) {
                 const file = files[i];
                 formData.append(name, file);
             }
-        } else {
+        }
+        else if (input.type == "date") {
+            formData.append(name, formattedDate);
+        }
+        else {
             formData.append(name, value);
         }
     });
@@ -66,16 +86,23 @@ document.querySelector(".submit").addEventListener("click", function(e) {
     })
     .then(response => response.json())
     .then(data => {
-        if (!data.hasOwnProperty('errors')) {
+        if (data.hasOwnProperty('errors')) {
+            swal(data["errors"][0].msg);
+            signUpDoctorSpinner.style.display = "none";
+        }
+        else if (data.hasOwnProperty("status")) {
+            swal(data.message);
+            signUpDoctorSpinner.style.display = "none";
+        }
+        else {
             document.querySelector(".parent .content .right").innerHTML = (`<h2>Thanks for your time. We will response you soon.</h2>`);
             document.querySelector(".parent .content").style.height = "820px";
             window.scrollTo(0, 0);
         }
-        else {
-            alert(data["errors"][0].msg);
-            signUpDoctorSpinner.style.display = "none";
-        }
     })
+    .catch(error => {
+        console.error(error);
+    });
 });
 
 document.querySelector(".parent .content .right p span").onclick = function() {

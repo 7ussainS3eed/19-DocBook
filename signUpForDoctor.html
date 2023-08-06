@@ -15,6 +15,9 @@
         <div class="over"></div>
         <div class="sign-in"></div>
         <div class="are"></div>
+        <a href="javascript:void(0);" id="backToTop" class="back-to-top">
+            <i class="arrow"></i><i class="arrow"></i>
+        </a>
         <header></header>
         <div class="parent">  
             <div class="content">
@@ -28,23 +31,21 @@
                     </div>
                 </div>
                 <div class="right">
-                    <h3>Sign up</h3>
+                    <h3>Sign Up</h3>
                     <form>
                         <label for="userName">User Name</label>
                         <input type="text" id="userName">
                         <label for="email">E-mail</label>
                         <input type="email" id="email">
-                        <label for="exp">Phone</label>
+                        <label for="phone">Phone</label>
                         <input type="text" id="phone">
-                        <label for="exp">Years of Experience</label>
-                        <input type="number" id="exp">
-                        <label for="birthDate">Date of birth</label>
-                        <input type="text" id="birthDate">
-                        <label for="password">Create password</label>
+                        <label for="birthDate">Date of Birth</label>
+                        <input type="date" id="birthDate" max="">
+                        <label for="password">Create Password</label>
                         <div class="same">
                             <input type="password" id="password">
                         </div>
-                        <label for="confirmPassword">Confirm password</label>
+                        <label for="confirmPassword">Confirm Password</label>
                         <div class="same">
                             <input type="password" id="confirmPassword">
                         </div>
@@ -65,14 +66,14 @@
                                 </div>
                             </div>
                             <div>
-                                <label for="price">Session price</label>
+                                <label for="price">Session Price</label>
                                 <input type="number" placeholder="$$" id="price">
                             </div>
                         </div>
                         <div class="nation_carner">
                             <div>
                                 <label>Profile Photo</label>
-                                <label for="photo">Upload photo +</label>
+                                <label for="photo">Upload Photo +</label>
                                 <input type="file" id="photo" hidden>
                                 <div>
                                     <span></span>
@@ -81,7 +82,7 @@
                             </div>
                             <div>
                                 <label>License</label>
-                                <label for="license">Upload photo +</label>
+                                <label for="license">Upload Photo +</label>
                                 <input type="file" id="license" hidden>
                                 <div>
                                     <span></span>
@@ -89,12 +90,10 @@
                                 </div>
                             </div>
                         </div>
-                        <label for="about">About You</label>
-                        <textarea id="about"></textarea>
-                        <button class="submit">Join now</button>
+                        <button class="submit">Join Now</button>
                         <div class="spinner"></div>
                     </form>
-                    <p>Already have an account?<span>sign in</span></p>
+                    <p>Already have an account?<span>Sign In</span></p>
                 </div>
             </div>
         </div>
@@ -104,8 +103,10 @@
         <script src="js/aid/all.min.js"></script>
         <script src="js/aid/jquery-3.6.1.min.js"></script>
         <script src="js/aid/axios.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="js/components/headerAndFooter.js"></script>
         <script src="js/components/signInAndAre.js"></script>
+        <script src="js/components/toTop.js"></script>
         <script src="js/signUpForDoctor.js"></script>
     </body>
 </html>

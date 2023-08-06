@@ -181,6 +181,12 @@ header {
     padding-right: 48.99px
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    margin-right: 12px;
+    font-size: 20px;
+    cursor: pointer
+}
+
 .parent .content .right form .spec_sess .spec div img,
 .parent .content .right form .location img {
     cursor: pointer;
@@ -346,6 +352,7 @@ header {
 .parent .content .right form button {
     width: 185px;
     height: 50px;
+    margin-top: 18px;
     margin-bottom: 22px;
     background-color: var(--main-color);
     color: #FFFFFF;
@@ -361,7 +368,7 @@ header {
 }
 
 .parent .content .right form .spinner {
-    top: 1334px;
+    top: 1020px;
     right: 338px;
     display: none
 }

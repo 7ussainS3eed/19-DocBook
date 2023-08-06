@@ -1,3 +1,6 @@
+var today = new Date().toISOString().split('T')[0];
+document.getElementById("birthDate").setAttribute("max", today);
+
 let signUpPatientInputs = document.querySelectorAll(".parent .content .content3 form input");
 let signUpPatientData = {};
 for (i = 0; i < 5; i++) {
@@ -16,6 +19,12 @@ for (i = 0; i < 5; i++) {
 let spinnerSignUpPatient = document.querySelector(".parent .content .content3 form .spinner")
 document.querySelector(".parent .content .content3 form").addEventListener("submit", function(e) {
     e.preventDefault();
+    for (i = 0; i < 5; i++) {
+        if (signUpPatientInputs[i].value == "") {
+            swal("Can not be blank!");
+            return;
+        }
+    }
     spinnerSignUpPatient.style.display = "block";
     fetch(`${domain}/auth/signupUser`, {
         method: "POST",
@@ -26,7 +35,7 @@ document.querySelector(".parent .content .content3 form").addEventListener("subm
     })
     .then(response => response.json())
     .then(responseData => {
-        alert(responseData.message);
+        swal(responseData.message ? responseData.message : "Error!");
         spinnerSignUpPatient.style.display = "none";
         if (responseData.hasOwnProperty('userId')) {
             location.href = "index.html"

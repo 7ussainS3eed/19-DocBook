@@ -1,73 +1,28 @@
-let doctors = [
-    {
-        image: "./images/sara.jpg",
-        name: "Sara William",
-        description: "Consultant specializing in children and newborns",
-        rate: 4,
-        views: 1324,
-        wait: 20,
-        price: 150,
-        calls: 100
-    },
-    {
-        image: "./images/harry.jpg",
-        name: "Harry Nelson",
-        description: "Consultant ENT",
-        rate: 5,
-        views: 1524,
-        wait: 25,
-        price: 130,
-        calls: 85
-    },
-    {
-        image: "./images/moly.jpg",
-        name: "Moly Watson",
-        description: "Consultant of Dermatology and Andrology",
-        rate: 5,
-        views: 2324,
-        wait: 30,
-        price: 170,
-        calls: 80
-    },
-    {
-        image: "./images/moly.jpg",
-        name: "Moly Watson",
-        description: "Consultant of Dermatology and Andrology",
-        rate: 5,
-        views: 2324,
-        wait: 30,
-        price: 170,
-        calls: 80
-    }
-];
-
 let getDoctorsPreInfo = function() {
-    fetch(`${domain}/admin/accepted-doctors`, {
+    fetch(`${domain}/admin/accepted-doctors-new`, {
         method: 'GET',
     })
     .then(response => response.json())
     .then(doctorsPreInfo => {
         localStorage.setItem("doctorsPreInfo", JSON.stringify(doctorsPreInfo.data));
-        //rendering the doctors' boxes shown in the slider
-        var waitingOptions = [10, 15, 20, 25, 30];
         for (i = 0; i < doctorsPreInfo.data.length; i++) {
             let box = document.createElement("div");
             box.classList.add("box");
             box.innerHTML = (`
                 <img src="${doctorsPreInfo.data[i].photo}" class="profile">
                 <h5>Dr. ${doctorsPreInfo.data[i].userName}</h5>
-                <p class="descr">${doctorsPreInfo.data[i].specialty ? doctorsPreInfo.data[i].specialty : "Specialty hasn’t been set yet!"}</p>
+                <p class="descr">${doctorsPreInfo.data[i].specialty ? doctorsPreInfo.data[i].specialty : "Cardiology (Heart)"}</p>
                 <div class="count">
                     <div>
-                        ${doctorsPreInfo.data[i].raiting != 0 ? `<img src="./images/rate.png"><span>${doctorsPreInfo.data[i].raiting.toFixed(1)}</span>` : `<span>No Ratings Yet!</span>`}
+                        ${doctorsPreInfo.data[i].raiting != 0 ? `<i class="fa-solid fa-star"></i></i><span>${doctorsPreInfo.data[i].raiting.toFixed(1)}</span>` : `<span>No Ratings Yet!</span>`}
                     </div>
                 </div>
                 <div class="information">
                     <div>
-                        <img src="./images/time.png"><span>Waiting Time</span><span>${waitingOptions[Math.floor(Math.random() * waitingOptions.length)]} Minute</span>
+                        <i class="fa-solid fa-star"></i></i><span>Reviews</span><span>${doctorsPreInfo.data[i].numReviews} Review</span>
                     </div>
                     <div>
-                        <img src="./images/video3.png"><span>Video Calls</span><span>${Math.floor(Math.random() * 3)} Call</span>
+                        <i class="fa-solid fa-money-check-dollar"></i><span>Detection Price</span><span>${doctorsPreInfo.data[i].price}$</span>
                     </div>
                 </div>
                 <button>Discover Available Appointments</button>
@@ -128,6 +83,7 @@ let getDoctorsPreInfo = function() {
                     }
                     else {
                         localStorage.setItem("doctorOpenedId", doctorsPreInfo.data[index-8]._id);
+                        localStorage.setItem("doctorOpenedProfFrom", "index.html")
                         location.href = "docProfForPatient.html";
                     }
                 }

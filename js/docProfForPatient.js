@@ -1,3 +1,13 @@
+document.querySelector(".back").onclick = function() {
+    console.log("fsdfsd")
+    if (localStorage.getItem("doctorOpenedProfFrom") == "index.html") {
+        location.href = "index.html"
+    }
+    else {
+        location.href = "doctors.html"
+    }
+}
+
 let patientMainData = JSON.parse(localStorage.getItem("patientMainData"));
 fetch(`${domain}/doctor/account/profile/${localStorage.getItem("doctorOpenedId")}`, {
     method: 'GET',
@@ -7,7 +17,6 @@ fetch(`${domain}/doctor/account/profile/${localStorage.getItem("doctorOpenedId")
 })
 .then(response => response.json())
 .then(doctorOpenedFullData => {
-    console.log(doctorOpenedFullData);
     document.getElementById('overlay').classList.add('hide-overlay');
     html.style.overflow = "auto";
     window.scrollTo(0, 0);
@@ -15,7 +24,7 @@ fetch(`${domain}/doctor/account/profile/${localStorage.getItem("doctorOpenedId")
     document.querySelector(".parent .content .content2 .box").innerHTML = (`
         <img src=${doctorOpenedFullData.photo}>
         <h2>Dr. ${doctorOpenedFullData.userName}</h2>
-        <p>${doctorOpenedFullData.specialty ? doctorOpenedFullData.specialty : "Specialty hasn’t been set yet!"}</p>
+        <p>${doctorOpenedFullData.specialty ? doctorOpenedFullData.specialty : "Cardiology (Heart)"}</p>
         <div>Add a complaint</div>
     `);
     document.querySelector(".complaint").innerHTML = (`
@@ -36,9 +45,10 @@ fetch(`${domain}/doctor/account/profile/${localStorage.getItem("doctorOpenedId")
             display("block", complaint, over);
             html.style.overflow = "hidden";
     }
+    let complaintSpinner = document.querySelector(".complaint .spinner");
     let addComplaint = function() {
         document.querySelector(".complaint div:last-of-type button:first-of-type").onclick = function() {
-            document.querySelector(".complaint .spinner").style.display = "block";
+            complaintSpinner.style.display = "block";
             fetch(`${domain}/doctor/complaints/${doctorOpenedFullData._id}`, {
                 method: 'POST',
                 headers: {
@@ -53,8 +63,11 @@ fetch(`${domain}/doctor/account/profile/${localStorage.getItem("doctorOpenedId")
             })
             .then(response => response.json())
             .then(data => {
-                alert(data.message);
-                location.reload();
+                complaintSpinner.style.display = "none";
+                swal(data.message)
+                .then(() => {
+                    location.reload();
+                });
             })
             .catch(error => {
                 console.error(error);
@@ -73,9 +86,9 @@ fetch(`${domain}/doctor/account/profile/${localStorage.getItem("doctorOpenedId")
         <h2>About The Doctor</h2>
         <p>${doctorOpenedFullData.aboutme ? doctorOpenedFullData.aboutme : "Hasn’t Been Set Yet!"}</p>
         <h3>Experience</h3>
-        <p>${Math.floor(Math.random() * 26) + 5} Years</p>
+        <p>${Math.floor(Math.random() * 8) + 3} Years</p>
         <h3>Service</h3>
-        <p>${doctorOpenedFullData.price ? doctorOpenedFullData.price + "$" : "Hasn’t Been Set Yet!"}</p>
+        <p>${doctorOpenedFullData.price}$</p>
     `);
     document.querySelector(".reviews").innerHTML = (`
         <h2>Patient Reviews</h2>
@@ -132,32 +145,41 @@ fetch(`${domain}/doctor/account/profile/${localStorage.getItem("doctorOpenedId")
         }
     }
     let commentsDiv = document.querySelector(".comments");
-    for (i = 0; i < doctorOpenedFullData.numReviews; i++) {
-        let full = document.createElement("div");
-        full.classList.add("full");
-        if (i == 0) {
-            full.style.paddingTop = "0";
-        }
-        if (i == doctorOpenedFullData.numReviews-1) {
-            full.style.cssText = "padding-bottom: 0; border-bottom: none"
-        }
-        full.innerHTML = (`
-            <div>
-                <img src="../images/user.png">
-                <span>Review ${doctorOpenedFullData.reviews[i]._id.slice(-5)}</span>
-            </div>
-            <div>
-                <div></div>
-                <p>${doctorOpenedFullData.reviews[i].comment}</p>
-            </div>
-        `);
-        commentsDiv.appendChild(full);
+    if (doctorOpenedFullData.numReviews == 0) {
+        let noreviews = document.createElement("img");
+        noreviews.src = "../images/reviews.png";
+        noreviews.style.width = "560px";
+        noreviews.style.height = "260px";
+        commentsDiv.appendChild(noreviews);
     }
-    for (i = 0; i < doctorOpenedFullData.numReviews; i++) {
-        for (j = 0; j < doctorOpenedFullData.reviews[i].rating; j++) {
-            let star = document.createElement("img");
-            star.setAttribute("src", "./images/rate.png");
-            document.querySelectorAll(".comments .full div div")[i].appendChild(star);
+    else {
+        for (i = 0; i < doctorOpenedFullData.numReviews; i++) {
+            let full = document.createElement("div");
+            full.classList.add("full");
+            if (i == 0) {
+                full.style.paddingTop = "0";
+            }
+            if (i == doctorOpenedFullData.numReviews-1) {
+                full.style.cssText = "padding-bottom: 0; border-bottom: none"
+            }
+            full.innerHTML = (`
+                <div>
+                    <img src="../images/user.png">
+                    <span>Private Review</span>
+                </div>
+                <div>
+                    <div></div>
+                    <p>${doctorOpenedFullData.reviews[i].comment}</p>
+                </div>
+            `);
+            commentsDiv.appendChild(full);
+        }
+        for (i = 0; i < doctorOpenedFullData.numReviews; i++) {
+            for (j = 0; j < doctorOpenedFullData.reviews[i].rating; j++) {
+                let star = document.createElement("img");
+                star.setAttribute("src", "./images/rate.png");
+                document.querySelectorAll(".comments .full div div")[i].appendChild(star);
+            }
         }
     }
 })
@@ -179,17 +201,17 @@ for (i = 0; i < 5; i++) {
         ratingReseter.style.display = "flex";
         rateH5.style.marginBottom = "8px";
         rating = index + 1;
-        console.log(rating);
     }
 }
 
+let reviewSpinner = document.querySelector(".parent .content .content2 div .box2 + div form div:last-of-type .spinner");
 document.querySelector(".parent .content .content2 div .box2 + div form div:last-of-type button").addEventListener("click", function(e) {
     e.preventDefault();
     if (rating == 0) {
-        alert("Please choose at least one star!");
+        swal("Please choose at least one star!");
     }
     else {
-        document.querySelector(".parent .content .content2 div .box2 + div form div:last-of-type .spinner").style.display = "block";
+        reviewSpinner.style.display = "block";
         fetch(`${domain}/doctor/${localStorage.getItem("doctorOpenedId")}/review`, {
             method: 'POST',
             headers: {
@@ -206,8 +228,11 @@ document.querySelector(".parent .content .content2 div .box2 + div form div:last
         })
         .then(response => response.json())
         .then(data => {
-            alert(data.message);
-            location.reload();
+            reviewSpinner.style.display = "none";
+            swal(data.message)
+            .then(() => {
+                location.reload();
+            });
         })
         .catch(error => {
             console.error(error);
@@ -225,57 +250,65 @@ ratingReseter.onclick = function() {
     }
 }
 
-function generateObject() {
-    const durations = ["30 min", "1 hr"];
-    const duration = durations[Math.floor(Math.random() * durations.length)];
-    const takenLength = Math.floor(Math.random() * 4) + 3;
-    const taken = [];
-    while (taken.length < takenLength) {
-        const randomNumber = Math.floor(Math.random() * 16);
-        if (!taken.includes(randomNumber)) {
-            taken.push(randomNumber);
-        }
-    }
-    const object = {
-        duration: duration,
-        taken: taken
-    };
-    return object;
-}
-const doctor = generateObject();
-console.log(doctor);
-
-let times = ["12:00 PM", "12:30 PM", "01:00 PM", "01:30 PM", "02:00 PM", "02:30 PM", "03:00 PM", "03:30 PM", "04:00 PM", "04:30 PM", "05:00 PM", "05:30 PM", "06:00 PM", "06:30 PM", "07:00 PM", "07:30 PM"]
-let bookButton = document.querySelector(".parent .content .content2 div .book")
-let dropMenu = document.querySelector(".wrapper .dropMenu")
-for (i = 0; i < 16; i++) {
+let times = ["12:00 PM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM"];
+let bookSpinner = document.querySelector(".parent .content .content2 .custom");
+let bookButton = document.querySelector(".parent .content .content2 div .book");
+let dropMenu = document.querySelector(".wrapper .dropMenu");
+for (i = 0; i < 8; i++) {
     let time = document.createElement("span")
-    if (doctor.duration == "1 hr" && i%2!=0) {
-        $(time).addClass("duration")
-    }
-    for (j = 0; j < doctor.taken.length; j++) {
-        if (i == doctor.taken[j]) {
-            time.classList.add("cannot");
-        }
-    }
     time.innerHTML = times[i];
     time.onclick = function() {
-        if (time.classList.contains("duration") == 0 && time.classList.contains("cannot") == 0) {
-            bookButton.style.display = "block"
-            bookButton.innerHTML = (`
-                Book (${prefinalResult} at ${this.innerHTML})
-            `)
-            $(bookButton).addClass("fade-in")
-            setTimeout(() => {
-                $(bookButton).removeClass("fade-in")
-            }, 1000);
-            localStorage.setItem("dateAndTimePicked", `${prefinalResult} at ${this.innerHTML}`)
-        }
-        /*bookButton.innerHTML = (`
-            Book (${prefinalResult} at ${this.innerHTML})
-        `)*/
+        bookSpinner.style.display = "block"
+        bookButton.style.display = "none";
+        var inputDate = prefinalResult;
+        var dateObj = new Date(inputDate);
+        var year = dateObj.getFullYear();
+        var month = String(dateObj.getMonth() + 1).padStart(2, '0');
+        var day = String(dateObj.getDate()).padStart(2, '0');
+        var formattedDate = year + '-' + month + '-' + day;
+        var inputTime = this.innerHTML;
+        var timeParts = inputTime.split(':');
+        var hours = parseInt(timeParts[0], 10);
+        var minutes = timeParts[1].split(' ')[0];
+        var meridian = 'pm';
+        var formattedTime = hours + ':' + minutes + ' ' + meridian;
+        fetch(`${domain}/doctor/getResrvationDays/${localStorage.getItem("doctorOpenedId")}/time/${formattedDate}`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${patientMainData.token}`,
+            },
+        })
+        .then(response => response.json())
+        .then(alldaychoosenAppons => {
+            let flag = 0;
+            for (i = 0; i < alldaychoosenAppons.length; i++) {
+                if (formattedTime == alldaychoosenAppons[i].start) {
+                    flag = 1;
+                    bookSpinner.style.display = "none";
+                    swal("This time is reserved, try to pick onother one!")
+                    .then(() => {
+                        location.reload();
+                    });
+                }
+            }
+            if (flag == 0) {
+                bookSpinner.style.display = "none";
+                bookButton.style.display = "block";
+                bookButton.innerHTML = (`
+                    Book (${prefinalResult} at ${this.innerHTML})
+                `)
+                $(bookButton).addClass("fade-in")
+                setTimeout(() => {
+                    $(bookButton).removeClass("fade-in")
+                }, 1000);
+                localStorage.setItem("dateAndTimePicked", `${prefinalResult} at ${this.innerHTML}`)
+            }
+        })
+        .catch(error => {
+            console.error(error);
+        });
     }
-    dropMenu.appendChild(time)
+    dropMenu.appendChild(time);
 }
 
 document.querySelector(".parent .content .content2 div .book").onclick = () => location.href = "confirm.html";

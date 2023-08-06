@@ -37,6 +37,7 @@
     height: 50px;
     display: block;
     margin-bottom: 8px;
+    padding: 10px;
     border: 1px solid #9B9B9B;
     border-radius: 10px;
     -webkit-border-radius: 10px;

@@ -192,6 +192,12 @@ header .content .control .buttons .drop {
     margin-bottom: 24px
 }
 
+input[type="month"]::-webkit-calendar-picker-indicator {
+    margin-right: 12px;
+    font-size: 20px;
+    cursor: pointer
+}
+
 .parent .content .content2 .box2 form div:first-of-type {
     color: var(--main-color);
     font-size: 30px;

@@ -136,6 +136,7 @@ header .content .control {
 
 .parent .content .content2 div .box img {
     width: 150px;
+    height: 150px;
     margin-bottom: 34px;
     border: 2px solid var(--alter2-color);
     border-radius: 50%;
@@ -366,7 +367,7 @@ aside:hover {
 }
 
 .comments {
-    height: 334px
+    height: 335px
 }
 
 .wrapper {
@@ -393,4 +394,9 @@ aside:hover {
 .fade-in {
     animation: fade 1s ease;
     -webkit-animation: fade 1s ease
+}
+
+.parent .content .content2 div .custom {
+    right: 65px;
+    display: none
 }

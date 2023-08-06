@@ -4,8 +4,6 @@ document.querySelector(".are2").innerHTML = (`
         <button>Patient</button>
         <span>Or</span>
         <button>Doctor</button>
-        <span>Or</span>
-        <button>Admin</button>
     </div>
 `);
 
@@ -26,7 +24,7 @@ document.querySelector(".sign-in").innerHTML = (`
         <input type="email">
         <label>Password</label>
         <input type="password">
-        <input type="submit" value="Join Now">
+        <input type="submit" value="Log In">
         <div class="spinner"></div>
     </form>
     <p>
@@ -53,17 +51,17 @@ document.querySelector("header .content .buttons p").onclick = function() {
 
 let roleButtons = document.querySelectorAll(".are2 div button");
 let signIn = document.querySelector(".sign-in");
-let roleChoise = "";
+let roleChoise = 0;
 if (document.title == "Patient Sign Up | DocBook") {
     roleChoise = 0;
 }
 else if (document.title == "Doctor Sign Up | DocBook") {
-    roleChoise = 1
+    roleChoise = 1;
 }
-else {
-    roleChoise = 0
+else if (document.title == "Admin LogIn | DocBook") {
+    roleChoise = 2;
 }
-for (i = 0; i < 3; i++) {
+for (i = 0; i < 2; i++) {
     roleButtons[i].onclick = function() {
         display("none", are2);
         display("block", signIn);
@@ -91,6 +89,10 @@ for (i = 0; i < 2; i++) {
 
 document.querySelector(".sign-in form").addEventListener("submit", function(e) {
     e.preventDefault();
+    if (signInInputs[0].value == "" || signInInputs[1].value == "") {
+        swal("Can not be blank!");
+        return;
+    }
     spinnerSignIn.style.display = "block";
     fetch(`${domain}/auth/${endPoints[roleChoise]}`, {
         method: "POST",
@@ -102,7 +104,7 @@ document.querySelector(".sign-in form").addEventListener("submit", function(e) {
     .then(response => response.json())
     .then(responseData => {
         if (!responseData.hasOwnProperty('token')) {
-            alert(responseData.message);
+            swal(responseData.message)
             spinnerSignIn.style.display = "none";
         }
         else {

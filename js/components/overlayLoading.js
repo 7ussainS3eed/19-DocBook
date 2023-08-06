@@ -4,5 +4,6 @@ document.querySelector("#overlay").innerHTML = (`
         <span>DocBook</span>
         <div id="loader"></div>
     </div>
-    <img src="../../images/animate4.gif">
+    
+    <img src="././images/animate4.gif">
 `);

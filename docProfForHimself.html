@@ -6,12 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Your Profile | DocBook</title>
         <link rel="stylesheet" href="css/aid/bootstrap.min.css">
-        <link rel="stylesheet" href="css/aid/all.min.css">
+        <script src="https://kit.fontawesome.com/b0d972bce3.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/docProfForHimself.css">
     </head>
     <body>
         <div id="overlay"></div>
+        <a href="javascript:void(0);" id="backToTop" class="back-to-top">
+            <i class="arrow"></i><i class="arrow"></i>
+        </a>
         <div id="content">
             <div class="note"></div>
             <div class="over"></div>
@@ -23,34 +26,14 @@
                         <h3>Profile</h3>
                         <div class="content2">
                             <div class="box"></div>
+                            <span class="exit">
+                                <i class="fa-regular fa-circle-xmark"></i>
+                            </span>
                             <img class="animate">
                         </div>
-                        <div class="content3">
-                            <div class="head">
-                                <span>Calendar</span>
-                                <div class="second">
-                                    <button>Edit</button>
-                                    <button>Save</button>
-                                </div>
-                            </div>
-                            <div class="content4">
-                                <div class="wrapper">
-                                    <header></header>
-                                    <div class="calendar"></div>
-                                </div>
-                                <div>
-                                    <div class="duration">
-                                        <h5>Session duration</h5>
-                                        <div class="buttons">
-                                            <button class="active">30 min</button>
-                                            <button>1 hr</button>
-                                        </div>
-                                    </div>
-                                    <div class="times">
-                                        <h5>For <span></span>, red the times you won't work at ...</h5>
-                                        <div class="buttons2"></div>
-                                    </div>
-                                </div>
+                        <div class="progress-bar">
+                            <div class="progress">
+                                <span class="text"></span>
                             </div>
                         </div>
                         <div class="reviews"></div>
@@ -69,15 +52,19 @@
                             <div class="outer">
                                 <div class="box"></div>
                             </div>
+                            <h5>Other Appointments</h5>
+                            <div class="outer2">
+                                <div class="box2"></div>
+                            </div>
                         </div>
                         <div class="right">
-                            <h5>Weekly reports</h5>
+                            <h5>Overall Reports</h5>
                             <div class="status">
                                 <div>
                                     <div>
-                                        <img src="./images/patient.png">
+                                        <img src="./images/video3.png">
                                     </div>
-                                    <span>Total patient</span>
+                                    <span>Total sessions</span>
                                     <span>Not Yet!</span>
                                 </div>
                                 <div>
@@ -94,15 +81,8 @@
                                     <span>Net profit</span>
                                     <span>Not Yet!</span>
                                 </div>
-                                <div>
-                                    <div>
-                                        <img src="./images/rate3.png">
-                                    </div>
-                                    <span>Ratings</span>
-                                    <span>Not Yet!</span>
-                                </div>
                             </div>
-                            <h5>Next patient details</h5>
+                            <h5>Details of Next Patient for Today</h5>
                             <div class="father">
                                 <div class="child"></div>
                                 <div class="control">
@@ -110,13 +90,13 @@
                                         <img src="./images/video2.png">
                                         <span>Video</span>
                                     </a>
-                                    
                                     <div>
                                         <img src="./images/note.png">
                                         <span>Note</span>
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                     <div class="setting">
@@ -178,10 +158,12 @@
         <script src="js/aid/bootstrap.bundle.min.js"></script>
         <script src="js/aid/all.min.js"></script>
         <script src="js/aid/jquery-3.6.1.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="js/components/overlayLoading.js"></script>
         <script src="js/components/headerAndFooter.js"></script>
         <script src="js/components/animate.js"></script>
         <script src="js/components/calender.js"></script>
+        <script src="js/components/toTop.js"></script>
         <script src="js/docProfForHimself.js"></script>
         <script src="js/assests/editProfImg.js"></script>
         <script src="js/assests/showPassword.js"></script>

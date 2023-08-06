@@ -1,0 +1,40 @@
+.background {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/admin.jpg);
+    background-size: cover;
+    position: absolute;
+    filter: brightness(60%);
+    -webkit-filter: brightness(60%)
+}
+
+.background::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.sign-in {
+    display: block
+}
+
+.sign-in form {
+    margin-bottom: 0;
+    border-bottom: none
+}
+
+.sign-in form input:last-of-type {
+    margin-bottom: 0
+}
+
+.sign-in p:last-of-type {
+    display: none
+}
+
+.are2, .are, header, .contact {
+    display: none
+}

@@ -1,6 +1,6 @@
+document.querySelector(".back").onclick = () => location.href = "index.html";
+
 let doctorsPreInfo = JSON.parse(localStorage.getItem("doctorsPreInfo"));
-console.log(doctorsPreInfo)
-var waitingOptions = [10, 15, 20, 25, 30];
 let boxes = document.querySelector(".parent .content .boxes");
 let renderDoctors = function() {
     let box = document.createElement("div");
@@ -12,24 +12,18 @@ let renderDoctors = function() {
                 <i class="fa fa-address-card"></i>
             </aside>
             <h5>Dr. ${doctorsPreInfo[i].userName}</h5>
-            <p>${doctorsPreInfo[i].specialty ? doctorsPreInfo[i].specialty : "Specialty hasn’t been set yet!"}</p>
+            <p>${doctorsPreInfo[i].specialty ? doctorsPreInfo[i].specialty : "Cardiology (Heart)"}</p>
             <div class="count">
                 <div>
-                    ${doctorsPreInfo[i].raiting != 0 ? `<img src="./images/rate.png"><span>${doctorsPreInfo[i].raiting.toFixed(1)}</span>` : `<span>No Ratings Yet!</span>`}
+                    ${doctorsPreInfo[i].raiting != 0 ? `<i class="fa-solid fa-star"></i></i><span>${doctorsPreInfo[i].raiting.toFixed(1)}</span>` : `<span>No Ratings Yet!</span>`}
                 </div>
-                <!--<div>
-                    <img src="./images/view.png"><span></span>
-                </div>-->
             </div>
             <div class="information">
                 <div>
-                    <img src="./images/time.png"><span>Waiting Time</span><span>${waitingOptions[Math.floor(Math.random() * waitingOptions.length)]} Minute</span>
+                    <i class="fa-solid fa-star"></i></i><span>Reviews</span><span>${doctorsPreInfo[i].numReviews} Review</span>
                 </div>
-                <!--<div>
-                    <img src="./images/dolar.png"><span>Detection price</span><span>pounds</span>
-                </div>-->
                 <div>
-                    <img src="./images/video3.png"><span>Video Calls</span><span>${Math.floor(Math.random() * 3)} Call</span>
+                    <i class="fa-solid fa-money-check-dollar"></i><span>Detection Price</span><span>${doctorsPreInfo[i].price}$</span>
                 </div>
             </div>
             <button></button>
@@ -41,6 +35,7 @@ let renderDoctors = function() {
                 <div class="calendar"></div>
                 <div class="dropMenu"></div>
             </div>
+            <div class="spinner"></div>
         </div>
     `);
     boxes.appendChild(box);
@@ -49,60 +44,65 @@ for (i = 0; i < doctorsPreInfo.length; i++) {
     renderDoctors();
 }
 
-let times = ["12:00 PM", "12:30 PM", "01:00 PM", "01:30 PM", "02:00 PM", "02:30 PM", "03:00 PM", "03:30 PM", "04:00 PM", "04:30 PM", "05:00 PM", "05:30 PM", "06:00 PM", "06:30 PM", "07:00 PM", "07:30 PM"];
+let times = ["12:00 PM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM"];
 let prefinalResult = "";
 let renderDropMenus = function() {
-    function getRandomDuration() {
-        const durations = ["30 min", "1 hr"];
-        return durations[Math.floor(Math.random() * durations.length)];
-    }
-    function getRandomTakenArray() {
-        const length = Math.floor(Math.random() * 4) + 3;
-        const taken = new Set();
-        while (taken.size < length) {
-          taken.add(Math.floor(Math.random() * 16));
-        }
-        return Array.from(taken);
-    }
-    function generateObjectsArray(length) {
-        const objectsArray = [];
-        for (let z = 0; z < length; z++) {
-            const obj = {
-                duration: getRandomDuration(),
-                taken: getRandomTakenArray(),
-        };
-            objectsArray.push(obj);
-        }
-        return objectsArray;
-    }
-    const doctors = generateObjectsArray(doctorsPreInfo.length);
+    let checkingSpinner = document.querySelectorAll(".parent .content .boxes .box .second .spinner");
     let boxesButtons = document.querySelectorAll(".parent .content .boxes .box .first button");
-    let informationDivs = document.querySelectorAll(".parent .content .boxes .box .first .information");
     let dropMenus = document.querySelectorAll(".wrapper .dropMenu");
-    for (b = 0; b < 16; b++) {
+    for (b = 0; b < 8; b++) {
         let time = document.createElement("span")
-        if (doctors[j].duration == "1 hr" && b%2!=0) {
-            time.classList.add("duration");
-        }
-        for (c = 0; c < doctors[j].taken.length; c++) {
-            if (b == doctors[j].taken[c]) {
-                time.classList.add("cannot");
-            }
-        }
         time.innerHTML = times[b]
         time.onclick = function() {
-            if (time.classList.contains("duration") == 0 && time.classList.contains("cannot") == 0) {
-                boxesButtons[boxIndex].style.display = "block"
-                boxesButtons[boxIndex].innerHTML = (`
-                    Book (${prefinalResult} at ${this.innerHTML})
-                `)
-                informationDivs[boxIndex].style.marginBottom = "10px"
-                $(boxesButtons[boxIndex]).addClass("fade-in")
-                setTimeout(() => {
-                    $(boxesButtons[boxIndex]).removeClass("fade-in")
-                }, 1000)
-                localStorage.setItem("dateAndTimePicked", `${prefinalResult} at ${this.innerHTML}`)
-            }
+            bookButtons[boxIndex].style.display = "none";
+            checkingSpinner[boxIndex].style.display = "block";
+            var inputDate = prefinalResult;
+            var dateObj = new Date(inputDate);
+            var year = dateObj.getFullYear();
+            var month = String(dateObj.getMonth() + 1).padStart(2, '0');
+            var day = String(dateObj.getDate()).padStart(2, '0');
+            var formattedDate = year + '-' + month + '-' + day;
+            var inputTime = this.innerHTML;
+            var timeParts = inputTime.split(':');
+            var hours = parseInt(timeParts[0], 10);
+            var minutes = timeParts[1].split(' ')[0];
+            var meridian = 'pm';
+            var formattedTime = hours + ':' + minutes + ' ' + meridian;
+            fetch(`${domain}/doctor/getResrvationDays/${doctorsPreInfo[boxIndex]._id}/time/${formattedDate}`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${JSON.parse(localStorage.getItem("patientMainData")).token}`,
+                },
+            })
+            .then(response => response.json())
+            .then(alldaychoosenAppons => {
+                let flag = 0;
+                for (i = 0; i < alldaychoosenAppons.length; i++) {
+                    if (formattedTime == alldaychoosenAppons[i].start) {
+                        flag = 1;
+                        checkingSpinner[boxIndex].style.display = "none";
+                        swal("This time is reserved, try to pick onother one!")
+                        .then(() => {
+                            location.reload();
+                        });
+                    }
+                }
+                if (flag == 0) {
+                    checkingSpinner[boxIndex].style.display = "none";
+                    boxesButtons[boxIndex].style.display = "block";
+                    boxesButtons[boxIndex].innerHTML = (`
+                        Book (${prefinalResult} at ${this.innerHTML})
+                    `)
+                    $(boxesButtons[boxIndex]).addClass("fade-in")
+                    setTimeout(() => {
+                        $(boxesButtons[boxIndex]).removeClass("fade-in")
+                    }, 1000)
+                    localStorage.setItem("dateAndTimePicked", `${prefinalResult} at ${this.innerHTML}`)
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
         }
         dropMenus[j].appendChild(time);
     }
@@ -145,6 +145,7 @@ let viewProfAsid = document.querySelectorAll(".parent .content .boxes .box .firs
 for (i = 0; i < viewProfAsid.length; i++) {
     viewProfAsid[i].addEventListener("click", function() {
         localStorage.setItem("doctorOpenedId", doctorsPreInfo[Array.prototype.indexOf.call(viewProfAsid, this)]._id);
+        localStorage.setItem("doctorOpenedProfFrom", "doctors.html")
         location.href = "docProfForPatient.html";
     })  
 }
